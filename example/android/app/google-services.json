@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "10220476747",
+    "project_id": "iterableflutter",
+    "storage_bucket": "iterableflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10220476747:android:c336ce8c3f976f4329f0ce",
+        "android_client_info": {
+          "package_name": "com.fluttersdk.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10220476747-vmmsr682of8p4mndajsum7drmcppht9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu6SiOhEY_OmwHI9xeyYBc1aRqXiRJZpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10220476747-vmmsr682of8p4mndajsum7drmcppht9n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "10220476747-jkr5uj6lm3293qr1t6asoro90l6002do.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fluttersdk.example"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

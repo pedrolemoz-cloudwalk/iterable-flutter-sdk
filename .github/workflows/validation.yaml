@@ -1,0 +1,24 @@
+name: 'validation'
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+jobs:
+  check_jira_ticket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: Iterable/checkout@v2.3.4
+      - name: Check for JIRA ticket in title
+        uses: Iterable/github-script@v3.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const regex = /^\[[A-Z]{2,}-[0-9]+\]/;
+            const title = context.payload.pull_request.title;
+            if (!regex.test(title)) {
+              core.setFailed(`Pull request title "${title}" does not start with a JIRA ticket number in brackets.`);
+            }

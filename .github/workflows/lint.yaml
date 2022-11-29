@@ -1,0 +1,29 @@
+name: 'Run flutter linter check'
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+jobs:
+  check_jira_ticket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: Iterable/checkout@v2.3.4
+      - name: 'Create env file'
+        run: |
+          cd example/
+          touch .env
+          echo API_KEY=${{ secrets.API_KEY }} >> .env
+          echo JWT_API_KEY=${{ secrets.JWT_API_KEY }} >> .env
+          echo JWT_TOKEN=${{ secrets.JWT_TOKEN }} >> .env
+          cat .env
+          cd ..
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.3.6'
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter analyze
