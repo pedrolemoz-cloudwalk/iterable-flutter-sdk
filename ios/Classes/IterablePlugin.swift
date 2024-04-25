@@ -566,4 +566,12 @@ extension SwiftIterablePlugin: IterableAuthDelegate {
             }
         }
     }
+
+    public func onTokenRegistrationFailed(_ reason: String?) {
+        if let customReason = reason {
+            print("Token registration failed. Reason: \(customReason)")
+        } else {
+            print("Token registration failed.")
+        }
+    }
 }
